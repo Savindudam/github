@@ -1,18 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Copy VLESS Link</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: #111;
+    }
+    .container {
+      text-align: center;
+      background: #1e1e1e;
+      padding: 2rem 3rem;
+      border-radius: 16px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+    button {
+      font-size: 1.4rem;
+      padding: 14px 40px;
+      border: none;
+      border-radius: 50px;
+      background: linear-gradient(135deg, #00c9ff, #007bff);
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      transition: transform 0.1s, box-shadow 0.1s;
+    }
+    button:hover {
+      box-shadow: 0 0 15px #00c9ffaa;
+    }
+    button:active {
+      transform: scale(0.96);
+    }
+    #copy-status {
+      margin-top: 1rem;
+      font-size: 0.95rem;
+      color: #4caf50;
+      min-height: 24px;
+      transition: opacity 0.3s;
+    }
+  </style>
 </head>
 <body>
-   python3 -c "import json, urllib.request; t='github_pat_11BFLPTJA0egjdoWBhYzNf_QNQY53W7M vGCkcy5eRQgzdTEpmE1GqNWrd5zZED0iF1AIYEGDT3X5CMjg53'; u='https://models.github.ai/inference/chat/completions'; ms=[{'role':'system','content':'Return ONLY C++17 code. No comments, no text. Optimal solution, fast I/O, STL, full main(), edge cases handled. Infer constraints, choose best algorithm, verify complexity.'}]; [ms.append({'role':'user','content':i}) or (req:=urllib.request.Request(u, data=json.dumps({'model':'openai/gpt-4o','messages':ms}).encode(), headers={'Authorization':'Bearer '+t,'Content-Type':'application/json','Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28','User-Agent':'python'}, method='POST')) and (res:=json.loads(urllib.request.urlopen(req).read())) and (ans:=res['choices'][0]['message']['content']) and (__import__('subprocess').run('clip', input=ans.encode(), shell=True) or True) and print('\nerror>', ans) and (ms.append({'role':'assistant','content':ans}) or True) for i in iter(lambda: (print('\nterminal> ', end='') or '\n'.join(iter(lambda: input(), 'END'))), 'exit')]"
-  
-   python3 -c "import json, urllib.request; t='github_pat_11BFLPTJA0hGrnNkv3CA8N_VMSxC0rxs vCW28sTbNhFlZnX9T5ashWRNHRRKigWNwBH6N25BLN614Xui9W'; u='https://models.github.ai/inference/chat/completions'; ms=[{'role':'system','content':'Return ONLY C++17 code. No comments, no text. Optimal solution, fast I/O, STL, full main(), edge cases handled. Infer constraints, choose best algorithm, verify complexity.'}]; [ms.append({'role':'user','content':i}) or (req:=urllib.request.Request(u, data=json.dumps({'model':'openai/gpt-4o','messages':ms}).encode(), headers={'Authorization':'Bearer '+t,'Content-Type':'application/json','Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28','User-Agent':'python'}, method='POST')) and (res:=json.loads(urllib.request.urlopen(req).read())) and (ans:=res['choices'][0]['message']['content']) and (__import__('subprocess').run('clip', input=ans.encode(), shell=True) or True) and print('\nerror>', ans) and (ms.append({'role':'assistant','content':ans}) or True) for i in iter(lambda: (print('\nterminal> ', end='') or '\n'.join(iter(lambda: input(), 'END'))), 'exit')]"
+  <div class="container">
+    <button id="copy-btn">Copy</button>
+    <div id="copy-status"></div>
+  </div>
 
-   python3 -c "import json, urllib.request; t='github_pat_11BFLPTJA0bleje9DLTxX6_tkxP5dM9p P6TEYeZTugFQIwlVng3cAthL1E2e5fFZnnHKESWJ3RkV9sM2dz'; u='https://models.github.ai/inference/chat/completions'; ms=[{'role':'system','content':'Return ONLY C++17 code. No comments, no text. Optimal solution, fast I/O, STL, full main(), edge cases handled. Infer constraints, choose best algorithm, verify complexity.'}]; [ms.append({'role':'user','content':i}) or (req:=urllib.request.Request(u, data=json.dumps({'model':'openai/gpt-4o','messages':ms}).encode(), headers={'Authorization':'Bearer '+t,'Content-Type':'application/json','Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28','User-Agent':'python'}, method='POST')) and (res:=json.loads(urllib.request.urlopen(req).read())) and (ans:=res['choices'][0]['message']['content']) and (__import__('subprocess').run('clip', input=ans.encode(), shell=True) or True) and print('\nerror>', ans) and (ms.append({'role':'assistant','content':ans}) or True) for i in iter(lambda: (print('\nterminal> ', end='') or '\n'.join(iter(lambda: input(), 'END'))), 'exit')]"
+  <script>
+    // The exact vless:// link you provided
+    const VLESS_LINK = "vless://1573776a-fb85-4fd8-b69b-d8f7edf62deb@may-03.neutrinotm.online:443?type=tcp&encryption=none&security=tls&fp=chrome&alpn=h3%2Ch2%2Chttp%2F1.1&sni=aka.ms#~%F0%9D%90%8D%F0%9D%90%9E%F0%9D%90%AE%F0%9D%90%AD%F0%9D%90%AB%F0%9D%90%A2%F0%9D%90%A7%F0%9D%90%A8%E1%B5%80%E1%B4%B9%20-%204.1-Savindu%20DreamXHava-%E2%9D%B0%E2%9D%B0%E2%9D%B0DialogZoom724%E2%9D%B1%E2%9D%B1%E2%9D%B1";
 
-   python3 -c "import json, urllib.request; t='github_pat_11BFLPTJA0lTqzcGgDyvOA_UfqdS4aUw CpZXAo0h7cPhsprNHylz2OS9PMqBZidwSiJ4W5AND6U787lwyH'; u='https://models.github.ai/inference/chat/completions'; ms=[{'role':'system','content':'Return ONLY C++17 code. No comments, no text. Optimal solution, fast I/O, STL, full main(), edge cases handled. Infer constraints, choose best algorithm, verify complexity.'}]; [ms.append({'role':'user','content':i}) or (req:=urllib.request.Request(u, data=json.dumps({'model':'openai/gpt-4o','messages':ms}).encode(), headers={'Authorization':'Bearer '+t,'Content-Type':'application/json','Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28','User-Agent':'python'}, method='POST')) and (res:=json.loads(urllib.request.urlopen(req).read())) and (ans:=res['choices'][0]['message']['content']) and (__import__('subprocess').run('clip', input=ans.encode(), shell=True) or True) and print('\nerror>', ans) and (ms.append({'role':'assistant','content':ans}) or True) for i in iter(lambda: (print('\nterminal> ', end='') or '\n'.join(iter(lambda: input(), 'END'))), 'exit')]"
-   
-   python3 -c "import json, urllib.request; t='github_pat_11BFLPTJA0eNIwJv2UXqTH_CacGJUhN6 rka0bzGbYqFkk6B41p8Mo7PuvIg3EdQWr2Y27AR5NKPtrJSZW4'; u='https://models.github.ai/inference/chat/completions'; ms=[{'role':'system','content':'Return ONLY C++17 code. No comments, no text. Optimal solution, fast I/O, STL, full main(), edge cases handled. Infer constraints, choose best algorithm, verify complexity.'}]; [ms.append({'role':'user','content':i}) or (req:=urllib.request.Request(u, data=json.dumps({'model':'openai/gpt-4o','messages':ms}).encode(), headers={'Authorization':'Bearer '+t,'Content-Type':'application/json','Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28','User-Agent':'python'}, method='POST')) and (res:=json.loads(urllib.request.urlopen(req).read())) and (ans:=res['choices'][0]['message']['content']) and (__import__('subprocess').run('clip', input=ans.encode(), shell=True) or True) and print('\nerror>', ans) and (ms.append({'role':'assistant','content':ans}) or True) for i in iter(lambda: (print('\nterminal> ', end='') or '\n'.join(iter(lambda: input(), 'END'))), 'exit')]"
+    const copyBtn = document.getElementById('copy-btn');
+    const statusEl = document.getElementById('copy-status');
 
-   </body>
+    async function copyToClipboard(text) {
+      // Modern async clipboard API
+      try {
+        await navigator.clipboard.writeText(text);
+        return true;
+      } catch (err) {
+        // Fallback for older browsers or insecure contexts
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = '0';
+        document.body.appendChild(textarea);
+        textarea.select();
+        try {
+          document.execCommand('copy');
+          return true;
+        } catch (e) {
+          return false;
+        } finally {
+          document.body.removeChild(textarea);
+        }
+      }
+    }
+
+    copyBtn.addEventListener('click', async () => {
+      const success = await copyToClipboard(VLESS_LINK);
+      if (success) {
+        statusEl.textContent = '✅ Copied!';
+      } else {
+        statusEl.textContent = '❌ Copy failed. Please try again.';
+      }
+      // Clear status after 2.5 seconds
+      setTimeout(() => {
+        statusEl.textContent = '';
+      }, 2500);
+    });
+  </script>
+</body>
 </html>
